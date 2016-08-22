@@ -1,0 +1,49 @@
+//- Layout after here
+div.temp
+  svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 32 32")
+    path(d="M12 4v11.5c-1.8 1.2-3 3.2-3 5.5 0 4 3 7 7 7s7-3 7-7c0-2.3-1.3-4.3-3-5.5V14h2v-2h-2v-2h2V8h-2V6h2V4H12zm2 2h4v10.4l.5.3C20 17.7 21 19 21 21c0 2.8-2.2 5-5 5s-5-2.2-5-5c0-2 1-3.4 2.5-4.3l.5-.3V6zm1 2v10.2c-1.2.4-2 1.5-2 2.8 0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.3-.8-2.4-2-2.8V8h-2z", stroke="#fff", fill="none")
+  - var temp = Math.round(data.temp)
+  h2 #{temp}°C
+div.hum
+  svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 32 32")
+    path(d="M15 4C9 4 4 9 4 15s5 11 11 11c1.3 0 2.5-.2 3.7-.7l-.2-1.3v-.8c-1 .5-2.2.8-3.5.8-5 0-9-4-9-9s4-9 9-9c4.5 0 8.3 3.4 9 7.8v-.2l2 2.8V15c0-6-5-11-11-11zm0 4c-4 0-7 3-7 7 0 .8 0 1.5.4 2.3l2-.6C10 16 10 15.5 10 15c0-2.8 2.2-5 5-5 1 0 2 .3 2.7.8L15.5 13H15c-1 0-2 1-2 2s1 2 2 2 2-1 2-2v-.5l4.2-4.3-1.4-1.4-.6.6C18 8.4 16.6 8 15 8zm6.4 4.2l-1.6 1.6.2 1.2c0 .5 0 1-.3 1.7l2 .6c.2-.8.3-1.5.3-2.3 0-1-.2-2-.6-2.8zm2.6 4l-.8 1.2s-.8 1-1.6 2.5c-.4.5-.7 1.3-1 2-.3.7-.6 1.3-.6 2 0 2.2 1.8 4 4 4s4-1.8 4-4c0-.7-.3-1.3-.6-2s-.6-1.5-1-2c-.8-1.5-1.6-2.6-1.6-2.6l-.8-1zm0 3.7c.3.3.3.3.6 1 .4.5.8 1.2 1 1.8L26 24c0 1-1 2-2 2s-2-1-2-2c0 0 0-.6.4-1.2l1-2 .6-1z", stroke="#fff", fill="none")
+  - var humidity = Math.round(data.humidity)
+  h2 #{humidity}%
+
+//- Inline styles after here
+style.
+  #widget-#{widget._id} > div{
+    width:  100%;
+    height:  100%;
+  }
+  #widget-#{widget._id} div div {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  #widget-#{widget._id} svg {
+    width: auto;
+    height: 50%;
+  }
+
+  #widget-#{widget._id} h2 {
+    font-size: 5em;
+    margin: 0;
+    text-align: center;
+  }
+
+
+
+//- Inline scripts after here
+script.
+    // Get the module element
+    var module = document.getElementById('widget-#{widget._id}');
+
+    // Get the elements inside your module element
+    var moduleElement = module.querySelector('h1');
+
+    // Do some fancy stuff
+    // moduleElement.innerText = !!!';
+    console.log(#{data});
