@@ -13,11 +13,8 @@ exports.get = function(params) {
             reject(new Error('Nope'));
         }
         else {
-
             resolve(JSON.parse(stdout));
         }
-
     });
-
   });
 };
