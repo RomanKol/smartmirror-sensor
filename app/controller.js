@@ -1,20 +1,14 @@
 'use strict';
 
-const exec = require('child_process').exec;
-const pathToScript = './script.js';
-
 exports.get = function(params) {
   // Return new Promise
   return new Promise((resolve, reject) => {
 
-   exec('node ' + pathToScript, (err, stdout, stderr) => {
+    if(true)
+      resolve(({hello: 'Hello World'}));
+    else {
+      reject(new Error('Nope'));
+    }
 
-        if(err !== null){
-            reject(new Error('Nope'));
-        }
-        else {
-            resolve(JSON.parse(stdout));
-        }
-    });
   });
 };
