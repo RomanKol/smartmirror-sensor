@@ -50,8 +50,8 @@ script.
       if (this.status >= 200 && this.status < 400) {
         // Success!
         var data = JSON.parse(this.response);
-        humEl.textContent = data.hum + ' °C';
-        tempEl.textContent = data.temp + ' %';
+        humEl.textContent = data.Humidity + ' °C';
+        tempEl.textContent = data.Temperature + ' %';
       } else {
         humEl.textContent = '- °C';
         tempEl.textContent = '- %';

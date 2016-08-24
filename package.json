@@ -16,12 +16,6 @@
     "jade": "^1.11.0"
   },
   "smartmirror": {
-    "settings": {
-      "hello": {
-        "type": "string",
-        "desc": "Hello"
-      }
-    },
     "size": [
       "4x2"
     ]
