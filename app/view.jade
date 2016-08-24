@@ -50,11 +50,11 @@ script.
       if (this.status >= 200 && this.status < 400) {
         // Success!
         var data = JSON.parse(this.response);
-        humEl.textContent = Math.round(data.Humidity) + ' °C';
-        tempEl.textContent = Math.round(data.Temperature) + ' %';
+        tempEl.textContent = Math.round(data.Humidity) + ' °C';
+        humEl.textContent = Math.round(data.Temperature) + ' %';
       } else {
-        humEl.textContent = '- °C';
-        tempEl.textContent = '- %';
+        tempEl.textContent = '- °C';
+        humEl.textContent = '- %';
       }
     };
 
